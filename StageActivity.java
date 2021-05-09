@@ -116,8 +116,7 @@ public class StageActivity {
     public void stageMove(Stage beMoveStage, Scene bePressedScene) {
         // mouse pressed handle
         bePressedScene.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override 
-            public void handle(MouseEvent event) {      
+            @Override public void handle(MouseEvent event) {      
                 // sava when mouse click, mouse and stage on screen coordinate
                 mouseX = event.getScreenX();
                 mouseY = event.getScreenY();
@@ -132,8 +131,7 @@ public class StageActivity {
 
         // mouse dragged handle
         bePressedScene.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override 
-            public void handle(MouseEvent event) {
+            @Override public void handle(MouseEvent event) {
                 if (stageResize == false) {
                     beMoveStage.setX(stageX + (event.getScreenX() - mouseX));
                     beMoveStage.setY(stageY + (event.getScreenY() - mouseY));

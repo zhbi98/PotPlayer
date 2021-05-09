@@ -44,8 +44,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import javafx.concurrent.Task;
-
 import potplayer.ButtonStyle;
 import potplayer.DateAndTime;
 import potplayer.FileStreams;
@@ -120,16 +118,7 @@ public class PotPlayerEvent implements Initializable {
     private MediaPlayers potPlayer;
     private boolean noFile = true;
 
-    public void printInfo(String info) {
-        System.out.println("On Potplayer Event:" + info);
-        // playerMain.fileDialog.fileDialogShow(playerMain.mainStage);
-        // http://vfx.mtime.cn/Video/2018/05/22/mp4/180522165517679320.mp4
-        // http://vfx.mtime.cn/Video/2020/11/18/mp4/201118203739607528.mp4
-
-        // newMediaObject(info);
-    }
-
-    public void mediaPlaying(MediaPlayers player) {
+    private void mediaPlaying(MediaPlayers player) {
         // read video play change event
         player.mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
             @Override

@@ -23,6 +23,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import potplayer.PotPlayer;
+
 
 public class PlayList {
     private Stage initStage;

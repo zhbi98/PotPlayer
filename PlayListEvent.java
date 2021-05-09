@@ -31,6 +31,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.util.Duration;
 
+import potplayer.PotPlayer;
 import potplayer.ButtonStyle;
 import potplayer.FileStreams;
 import potplayer.FileDialog;

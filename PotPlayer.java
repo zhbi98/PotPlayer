@@ -1,6 +1,7 @@
 
 package potplayer;
 
+import static java.awt.SystemColor.text;
 import java.io.File;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -65,6 +66,8 @@ import potplayer.PlayList;
 import potplayer.PotPlayerConsts;
 import potplayer.StageActivity;
 
+import potplayer.PotPlayerEvent;
+
 
 public class PotPlayer extends Application {
     // mainStage Used to share other files
@@ -95,7 +98,7 @@ public class PotPlayer extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("PotPlayer");
         primaryStage.getIcons().add(new Image("PotPlayer/logo/potplayer.jpg"));
 
@@ -110,9 +113,12 @@ public class PotPlayer extends Application {
         // primaryStage.initStyle(StageStyle.UTILITY);
 
         try {
+            FXMLLoader floader = new FXMLLoader(getClass().getResource("./potplayer.fxml"));
             VBox vBox = FXMLLoader.load(getClass().getResource("./potplayer.fxml"));
             Scene scene = new Scene(vBox, PotPlayerConsts.PLAYER_DEFAULT_W, PotPlayerConsts.PLAYER_DEFAULT_H);
             scene.setFill(Color.BLACK);
+
+            PlayListEvent pevent = floader.getController();
 
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -204,10 +210,9 @@ public class PotPlayer extends Application {
                     for (int i = 0; i < 3600; i++) {
                         System.out.println("Thread name:" + Thread.currentThread().getName());
                         System.out.println(DateAndTime.readDateAndTime());
-                        System.out.println("Web time:" + DateAndTime.readWebDateAndTime(null, "all"));
                         System.out.println(Platform.isFxApplicationThread());
 
-                        Thread.sleep(2000);
+                        Thread.sleep(60000);
                     }
 
                     return null;
@@ -226,7 +231,7 @@ public class PotPlayer extends Application {
                         System.out.println(angle);
                         System.out.println(Platform.isFxApplicationThread());
 
-                        Thread.sleep(2000);
+                        Thread.sleep(60000);
                     }
 
                     return null;
@@ -235,9 +240,7 @@ public class PotPlayer extends Application {
 
             Thread threadTime = new Thread(taskTime);
             Thread threadRandom = new Thread(taskRandom);
-            threadTime.setDaemon(true);
             threadTime.start();
-            threadRandom.setDaemon(true);
             threadRandom.start();
             System.out.println("PotPlayer running");
         } catch (Exception e) {

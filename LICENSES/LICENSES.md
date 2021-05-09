@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 zhbi98
+Copyright (c) <2020> <copyright zhbi98>
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),

@@ -17,7 +17,7 @@
 
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" stylesheets="@../potplayer/css/about.css"
-    xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml">
+    xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml">
     <top>
         <FlowPane>
             <!-- display label use to placeholder -->

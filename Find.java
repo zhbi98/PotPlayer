@@ -17,6 +17,8 @@ import javafx.stage.StageStyle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
+import potplayer.PotPlayer;
+
 
 public class Find {
     // Alert aboutBox;

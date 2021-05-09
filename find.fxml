@@ -17,7 +17,7 @@
 
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" stylesheets="@../potplayer/css/find.css"
-    xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml" fx:controller="potplayer.FindEvent">
+    xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml" fx:controller="potplayer.FindEvent">
     <top>
         <VBox>
             <Label prefHeight="30.0" prefWidth="300.0" BorderPane.alignment="CENTER" text=" "/>

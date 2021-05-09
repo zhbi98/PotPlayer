@@ -1,7 +1,6 @@
 
 package potplayer;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -13,7 +12,6 @@ import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -21,19 +19,19 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.ColorAdjust;
+import javafx.scene.paint.Color;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
-import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
+import potplayer.PotPlayer;
 import potplayer.ButtonStyle;
 
 
@@ -42,8 +40,6 @@ public class FindEvent implements Initializable {
     private Button search = new Button();
     @FXML
     private TextField text = new TextField("text");
-    @FXML
-    private PotPlayerEvent pevent;
 
     private ButtonStyle buttonStyle = new ButtonStyle();
 
@@ -54,15 +50,9 @@ public class FindEvent implements Initializable {
     }
 
     @FXML
-    void searchEvent(ActionEvent event) throws IOException {
+    void searchEvent(ActionEvent event) {
         buttonStyle.changeButtonColor(search);
-        // System.out.println(text.getText());
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("potplayer.fxml"));
-        VBox vBox = loader.load();
-        
-        pevent = (PotPlayerEvent)loader.getController();
-        pevent.printInfo(text.getText());
+        System.out.println(text.getText());
     }
 
     @Override

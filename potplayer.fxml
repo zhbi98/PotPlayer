@@ -20,7 +20,7 @@
 
 
 <VBox maxHeight="1080" maxWidth="1920" stylesheets="@../potplayer/css/potplayer.css"
-    xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml" fx:id="mainVBox" fx:controller="potplayer.PotPlayerEvent">
+    xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml" fx:id="mainVBox" fx:controller="potplayer.PotPlayerEvent">
     <children>
         <HBox prefHeight="32.0" prefWidth="${mainVBox.width}" fx:id="titleHBox" BorderPane.alignment="CENTER">
             <!-- display top name title -->
@@ -38,9 +38,9 @@
             <!-- display top close button -->
             <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text=" " style="-fx-background-image:url('potplayer/logo/close.jpg')" fx:id="close" onAction="#closeEvent"/>
         </HBox>
-        <BorderPane prefHeight="${mainVBox.height-97}" prefWidth="${mainVBox.width}" fx:id="videoPane">
+        <BorderPane prefHeight="${mainVBox.height-96}" prefWidth="${mainVBox.width}" fx:id="videoPane">
             <center>
-                <MediaView fitHeight="${mainVBox.height-97}" fitWidth="${mainVBox.width-4}" nodeOrientation="INHERIT" fx:id="mediaView"/>
+                <MediaView fitHeight="${mainVBox.height-96}" fitWidth="${mainVBox.width-8}" nodeOrientation="INHERIT" fx:id="mediaView"/>
 
                 <!-- <MediaView nodeOrientation="INHERIT" fx:id="mediaView"/> -->
             </center>
