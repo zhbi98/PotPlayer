@@ -1,0 +1,48 @@
+
+.root {
+   -fx-background-image: url("../logo/background.jpg");
+   -fx-background-position: center center;
+
+   -fx-border-style: solid inside;
+   -fx-border-width: 0;
+   -fx-border-insets: 0;
+   -fx-border-color: black;
+}
+
+.label {
+  -fx-text-fill: white
+}
+
+.slider .track {
+  /* slider width */
+    -fx-padding: 0.5;
+    /* -fx-background-color: #444444; */
+    /* hide the track background color */
+    -fx-background-color: null;
+    -fx-progress:1;
+}
+
+.slider .thumb {
+  /* slider point width */
+    -fx-padding: 4;
+    -fx-background-color: white;
+}
+
+.button {
+    -fx-background-color: #1E1E1E;
+    -fx-background-insets: 0;
+    /* -fx-border-radius: 0; */
+}
+
+.progress-bar .bar {
+    /* progress fill color */
+    -fx-background-color: #FAE100;
+    -fx-padding: 0.1px; 
+    -fx-background-insets: 0;
+}
+
+.progress-bar .track {
+    -fx-background-radius: 0, 0, 0;
+    -fx-background-color: #444444;
+    -fx-padding: 0.05em;
+} 

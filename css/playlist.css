@@ -1,0 +1,62 @@
+.root {
+    -fx-font-size: 10pt;
+    -fx-base: rgb(30, 30, 30);
+    -fx-background: rgb(30, 30, 30);
+    /*-fx-focus-color: transparent;*/
+    -fx-focus-color: black;
+}
+
+.label {
+    -fx-font-size: 12;
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: white;
+}
+
+.list-cell {
+    -fx-text-fill: gray;
+    -fx-background-color: #3B3B3B;
+    -fx-background-insets: 0;
+    /*-fx-background-color: transparent, white, transparent, white;*/
+    /*-fx-border-color: #000000;*/
+}
+
+.list-cell:selected {
+    -fx-background-color: #2B2B2B;
+    -fx-text-fill: white;
+}
+
+.button{
+    -fx-background-insets: 0;
+}
+
+/* Modify TabPane Pane area background color */
+.tab-pane {
+    -fx-background-color: #1E1E1E;
+}
+/* Change Tab background color */
+.tab {
+    -fx-background-color: #1E1E1E;
+}
+/* Change the background color of the top column */
+.tab-pane>*.tab-header-area>*.tab-header-background
+{
+    -fx-background-color: -fx-outer-border, -fx-text-box-border, #1E1E1E;
+}
+/* Change Tab color of Chinese version */
+.tab-label {
+    -fx-text-fill: #888888;
+}
+/* Subgenerational selector, select its element tab-label Tab selection */
+.tab:selected .tab-label {
+    -fx-text-fill: white;
+}
+/* Set tab background color when selected */
+.tab:selected {
+    -fx-background-color: #3B3B3B;
+}
+/* Select the Tab border and change the style when selected */
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-radius: 0px;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-color: #3B3B3B;
+}

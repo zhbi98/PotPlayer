@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+
+
+<VBox maxHeight="1080" maxWidth="1920" stylesheets="@../potplayer/css/playlist.css"
+    xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml" fx:id="vBox" fx:controller="potplayer.PlayListEvent">
+    <children>
+        <Label prefHeight="64.0" prefWidth="${vBox.width}" text="  PLAY LIST  " style="-fx-background-color:#1E1E1E"/>
+        <TabPane prefHeight="${vBox.height}" prefWidth="${vBox.width}">
+            <tabs>
+                <Tab text="Default">
+                    <content>
+                    	<VBox>
+                    		<children>
+		                        <ListView prefHeight="${vBox.height - 108}" prefWidth="314.0" BorderPane.alignment="CENTER" fx:id="listView"/>
+		                        <HBox prefHeight="42.0" prefWidth="${vBox.width}" BorderPane.alignment="CENTER">
+		                            <children>
+		                                <!-- display bottom play button -->
+		                                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/upp.jpg')"/>
+		                                <!-- display bottom stop button -->
+		                                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/up.jpg')"/>
+		                                <!-- display bottom prev button -->
+		                                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/down.jpg')"/>
+		                                <!-- display bottom next button -->
+		                                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/ddown.jpg')"/>
+
+		                                <!-- display bottom play button -->
+		                                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/play.jpg')"/>
+		                                <!-- display bottom stop button -->
+		                                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/stop.jpg')"/>
+		                                <!-- display bottom prev button -->
+		                                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/prev.jpg')"/>
+		                                <!-- display bottom next button -->
+		                                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/next.jpg')"/>
+		                            </children>
+		                        </HBox>
+		                    </children>
+	                    </VBox>
+                    </content>
+                </Tab>
+                <Tab text="New album">
+                    <content>
+                        <Label prefHeight="32.0" prefWidth="${vBox.width}" text="  Add your favorite music" style="-fx-background-color:#1E1E1E"/>
+                    </content>
+                </Tab>
+
+                <Tab text="Hello">
+                    <content>
+                        <Label prefHeight="32.0" prefWidth="${vBox.width}" text="  Hello developer" style="-fx-background-color:#1E1E1E"/>
+                    </content>
+                </Tab>
+
+                <Tab text="Setting">
+                    <content>
+                        <Label prefHeight="32.0" prefWidth="${vBox.width}" text="  Copyright(c) Potplayer developers" style="-fx-background-color:#1E1E1E"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>
