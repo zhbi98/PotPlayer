@@ -1,7 +1,24 @@
 language: java
 
 jdk:
-  - oraclejdk8
+  - openjdk8
+
+branches:
+  only:
+  - master
+
+# black list
+# branches:
+#   except:
+#     - master
+#     - prime
+
+# white list
+# branches:
+#   only:
+#     - master
+#     - prime
+
 
 install: true
 script: true
