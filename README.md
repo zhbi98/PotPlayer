@@ -23,9 +23,9 @@
 
 # 已实现样式
 
-<img src="https://github.com/zhbi98/PotPlayer/blob/master/logo/20210509181933630.jpg" alt="GitHub" title="GitHub,Social Coding" width="456" height="400"/>
+<img align="center" src="https://github.com/zhbi98/PotPlayer/blob/master/logo/20210509181933630.jpg" alt="GitHub" title="GitHub,Social Coding" width="456" height="400"/>
 
-<img src="https://github.com/zhbi98/PotPlayer/blob/master/logo/20210509182256488.jpg" alt="GitHub" title="GitHub,Social Coding" width="912" height="615"/>
+<img align="center" src="https://github.com/zhbi98/PotPlayer/blob/master/logo/20210509182256488.jpg" alt="GitHub" title="GitHub,Social Coding" width="912" height="615"/>
 
 
 # 运行环境
