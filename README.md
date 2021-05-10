@@ -1,7 +1,7 @@
 
-[![Build Status](https://travis-ci.com/zhbi98/PotPlayer.svg?branch=master)](https://travis-ci.com/zhbi98/PotPlayer)
-
 # 关于
+
+[![Build Status](https://travis-ci.com/zhbi98/PotPlayer.svg?branch=master)](https://travis-ci.com/zhbi98/PotPlayer)
 
 这是一个参考 PotPlayer 的界面(**PotPlayer 是 KMPlayer 的原制作者
 姜龙喜先生(韩国)进入 Daum 公司后的新一代网络播放器, PotPlayer
