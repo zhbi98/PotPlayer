@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.MediaView?>
+<?import java.lang.*?>
+
+
+<VBox maxHeight="1080" maxWidth="1920" stylesheets="@../css/potplayer.css"
+    xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml" fx:id="mainVBox" fx:controller="potplayer.PotPlayerEvent">
+    <children>
+        <HBox prefHeight="32.0" prefWidth="${mainVBox.width}" fx:id="titleHBox" BorderPane.alignment="CENTER">
+            <!-- display top name title -->
+            <Label prefHeight="32.0" prefWidth="90.0" text=" " style="-fx-background-image:url('potplayer/logo/player.jpg')"/>
+            <!-- placeholder -->
+            <Label prefHeight="32.0" prefWidth="${mainVBox.width - 218 - 32}" text=" " style="-fx-background-image:url('potplayer/logo/titles.jpg')" fx:id="nameLabel"/>
+            <!-- display top nail button used to make stage on top -->
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text=" " style="-fx-background-image:url('potplayer/logo/nail.jpg')" fx:id="top" onAction="#topEvent"/>
+            <!-- display top min button -->
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text=" " style="-fx-background-image:url('potplayer/logo/min.jpg')" fx:id="min" onAction="#minEvent"/>
+            <!-- display top max button -->
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text=" " style="-fx-background-image:url('potplayer/logo/max.jpg')" fx:id="max" onAction="#maxEvent"/>
+            <!-- display top full button -->
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text=" " style="-fx-background-image:url('potplayer/logo/full.jpg')" fx:id="full" onAction="#fullEvent"/>
+            <!-- display top close button -->
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text=" " style="-fx-background-image:url('potplayer/logo/close.jpg')" fx:id="close" onAction="#closeEvent"/>
+        </HBox>
+        <BorderPane prefHeight="${mainVBox.height-97}" prefWidth="${mainVBox.width}" fx:id="videoPane">
+            <center>
+                <MediaView fitHeight="${mainVBox.height-97}" fitWidth="${mainVBox.width-4}" nodeOrientation="INHERIT" fx:id="mediaView"/>
+
+                <!-- <MediaView nodeOrientation="INHERIT" fx:id="mediaView"/> -->
+            </center>
+        </BorderPane>
+        <HBox prefHeight="22.0" prefWidth="${mainVBox.width}" fx:id="sliderHBox" BorderPane.alignment="CENTER">
+            <children>
+                <StackPane>
+                    <children>
+                        <!-- ProgressBar back ground -->
+                        <Label prefHeight="22.0" prefWidth="${mainVBox.width-108}" style="-fx-background-color:#1E1E1E" text=" "/>
+                        <ProgressBar prefHeight="1.0" prefWidth="${mainVBox.width-108}" fx:id="progressTime"/>
+                        <!-- display player time slider -->
+                        <Slider nodeOrientation="LEFT_TO_RIGHT" prefHeight="22.0" prefWidth="${mainVBox.width-108}" fx:id="sliderTime"/>
+                    </children>
+                </StackPane>
+                <!-- display volume mute icon -->
+                <Button prefHeight="21.0" prefWidth="21.0" style="-fx-background-image:url('potplayer/logo/volume.jpg')" fx:id="mute" onAction="#muteEvent"/> 
+                <StackPane>
+                    <children> 
+                        <Label prefHeight="22.0" prefWidth="87.0" style="-fx-background-color:#1E1E1E" text=" "/>
+                        <ProgressBar prefHeight="1.0" prefWidth="87.0" fx:id="progressVolume"/>
+                        <!-- display player volume slider -->
+                        <Slider nodeOrientation="LEFT_TO_RIGHT" prefHeight="22.0" prefWidth="87.0" fx:id="sliderVolume"/>
+                    </children>
+                </StackPane>
+            </children>
+        </HBox>
+        <HBox prefHeight="42.0" prefWidth="${mainVBox.width}" fx:id="playHBox" BorderPane.alignment="CENTER">
+            <children>
+                <!-- display bottom play button -->
+                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/play.jpg')" fx:id="play" onAction="#playEvent"/>
+                <!-- display bottom stop button -->
+                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/stop.jpg')" fx:id="stop" onAction="#stopEvent"/>
+                <!-- display bottom prev button -->
+                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/prev.jpg')"/>
+                <!-- display bottom next button -->
+                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/next.jpg')"/>
+                <!-- display bottom open files button -->
+                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/open.jpg')" fx:id="open" onAction="#openEvent"/>
+                <!-- display bottom video time label and placeholder -->
+                <Label prefHeight="42.0" prefWidth="${mainVBox.width-336}" style="-fx-background-image:url('potplayer/logo/bottom.jpg')" 
+                text="  00:00:00 / 00:00:00" fx:id="timeLabel"/> 
+                <!-- display bottom find icon label and placeholder -->
+                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/find.jpg')" fx:id="find" onAction="#findEvent"/>
+                <!-- display bottom about button -->
+                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/about.jpg')" fx:id="about" onAction="#aboutEvent"/>
+                <!-- display bottom more label use to placeholder -->
+                <!-- <Label prefHeight="42.0" prefWidth="42.0" style="-fx-background-image:url('more.jpg')"/> -->
+                <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text=" " style="-fx-background-image:url('potplayer/logo/more.jpg')"  fx:id="more" onAction="#moreEvent"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>
