@@ -38,7 +38,7 @@ public class About {
         this.aboutStage.initModality(Modality.APPLICATION_MODAL);
 
         try {
-            BorderPane aboutBorderPane = FXMLLoader.load(getClass().getResource("about.fxml"));
+            BorderPane aboutBorderPane = FXMLLoader.load(getClass().getResource("./fxml/about.fxml"));
             Scene aboutScene = new Scene(aboutBorderPane, 1024, 635);
             aboutScene.setFill(Color.BLACK);
             

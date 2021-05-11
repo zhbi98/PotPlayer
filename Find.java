@@ -38,7 +38,7 @@ public class Find {
         this.findStage.initModality(Modality.APPLICATION_MODAL);
 
         try {
-            BorderPane findBorderPane = FXMLLoader.load(getClass().getResource("find.fxml"));
+            BorderPane findBorderPane = FXMLLoader.load(getClass().getResource("./fxml/find.fxml"));
             Scene findScene = new Scene(findBorderPane, 300, 225);
             findScene.setFill(Color.BLACK);
             

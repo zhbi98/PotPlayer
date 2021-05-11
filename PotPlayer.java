@@ -110,7 +110,7 @@ public class PotPlayer extends Application {
         // primaryStage.initStyle(StageStyle.UTILITY);
 
         try {
-            VBox vBox = FXMLLoader.load(getClass().getResource("./potplayer.fxml"));
+            VBox vBox = FXMLLoader.load(getClass().getResource("./fxml/potplayer.fxml"));
             Scene scene = new Scene(vBox, PotPlayerConsts.PLAYER_DEFAULT_W, PotPlayerConsts.PLAYER_DEFAULT_H);
             scene.setFill(Color.BLACK);
 

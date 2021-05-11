@@ -44,7 +44,7 @@ public class PlayList {
         playListStage.initStyle(StageStyle.UNDECORATED);
 
         try {
-            VBox vBox = FXMLLoader.load(getClass().getResource("playlist.fxml"));
+            VBox vBox = FXMLLoader.load(getClass().getResource("./fxml/playlist.fxml"));
             Background bg;
             bg = new Background(new BackgroundFill(Paint.valueOf("#FF0000"), new CornerRadii(30), new Insets(10)));
             vBox.setBackground(bg);
