@@ -2,15 +2,21 @@
 # 关于
 
 [![Build Status](https://travis-ci.com/zhbi98/PotPlayer.svg?branch=master)](https://travis-ci.com/zhbi98/PotPlayer)
+![Lines of code](https://img.shields.io/tokei/lines/github/zhbi98/PotPlayer)
 
-这是一个参考 PotPlayer 的界面(**PotPlayer 是 KMPlayer 的原制作者
-姜龙喜先生(韩国)进入 Daum 公司后的新一代网络播放器, PotPlayer
-的优势在于强大的内置解码器以及支持各类的视频格式, 而且是免费下载提供使用的**) 
-使用 Java 以及图形界面框架 JavaFX 使用 MCV 图形界面与业务逻辑分离的开发模式, 
-所开发的个人视频播放器项目, 开发这个项目旨在于学习图形界面框架 JavaFX 
-实现了具有和 PotPlayer相同的简洁界面和流畅的操作逻辑。
+这是一个参考 PotPlayer 的界面使用 Java 以及图形界面框架 JavaFX 使用 
+MCV 图形界面与业务逻辑分离的开发模式, 所开发的个人视频播放器项目, 
+开发这个项目旨在于学习图形界面框架 JavaFX 实现了具有和 PotPlayer相同
+的简洁界面和流畅的操作逻辑。
 
-- 2020/10/28 v1.0.0
+**Note:**
+PotPlayer 是 KMPlayer 的原制作者姜龙喜先生(韩国)进入 Daum 公司后的
+新一代网络播放器, PotPlayer的优势在于强大的内置解码器以及支持各类的
+视频格式, 而且是免费下载提供使用的。
+
+**目前版本：**
+**2020/10/28 v1.0.0**
+
 - [x] 支持打开文件自动播放
 - [x] 支持查看播放记录
 - [x] 支持屏幕边沿窗口自动吸附
