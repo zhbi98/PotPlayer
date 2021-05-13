@@ -56,10 +56,10 @@ public class PlayListEvent implements Initializable {
         PlayerData pd = new PlayerData();
         String playedPath = "./src/potplayer/data/played.txt";
         int l = pd.getFileTotalNumOfRow(playedPath);
-        
-        for (int i = l; i >= (l - 50); i--) {
+
+        for (int i = l; i > 0; i--) {
             String fn = FileStreams.readAnyLine(playedPath, i);
-            FileDialog fd = new FileDialog();
+            FileDialog fd = new FileDialog()
             fn = fd.readFileNames(fn);
             listItems.add(fn);
         }
