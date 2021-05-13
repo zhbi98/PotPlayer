@@ -20,6 +20,8 @@ public class FileDialog {
     String openedName = null;
     String lastPath = null;
 
+    String settingPath = "./src/potplayer/data/setting.play";
+
     public FileDialog() {
         this.fileChooser = new FileChooser();
         this.fileChooser.setTitle("Open");
@@ -40,9 +42,9 @@ public class FileDialog {
          * if directory not exist, create the directory 
          */
 
-        FileStreams initLastPath = new FileStreams("./src/potplayer/data/setting.play");
+        FileStreams initLastPath = new FileStreams(this.settingPath);
         // read the path file, use next time init file dialog
-        this.initFileChooser(this.fileChooser, initLastPath, "./src/potplayer/data");
+        this.initFileChooser(this.fileChooser, initLastPath, this.settingPath);
 
         /**
          * showOpenMultipleDialog object return 
@@ -230,7 +232,7 @@ public class FileDialog {
             tOldPath = this.readFilePath(oldPath);
 
             if (isSamePath(tNewPath, tOldPath) == false) {
-                FileStreams fSavePath = new FileStreams("./src/potplayer/data/setting.play");
+                FileStreams fSavePath = new FileStreams(this.settingPath);
                 this.saveOpendFilePath(fSavePath, newPath);
 
                 this.lastPath = newPath;
@@ -242,8 +244,8 @@ public class FileDialog {
     }
 
     public void initFileChooser(FileChooser chooser, FileStreams fStream, String beCheckDir) {
-        if (fStream.emptyFile(beCheckDir + "/setting.play") == true) {
-            System.out.println("setting.play is empty");
+        if (fStream.emptyFile(beCheckDir) == true) {
+            System.out.println("setting file is empty");
             return;                
         }
 
@@ -252,7 +254,7 @@ public class FileDialog {
             // directory create success
             String names = fStream.readFile();
 
-            if (names != null) {
+            if ((names != null) && (FileStreams.checkdir(names) == true)) {
                 names = this.readFilePath(names);
                 names = this.pathWindowsToLinux(names);
 

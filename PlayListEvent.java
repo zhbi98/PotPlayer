@@ -59,7 +59,7 @@ public class PlayListEvent implements Initializable {
 
         for (int i = l; i > 0; i--) {
             String fn = FileStreams.readAnyLine(playedPath, i);
-            FileDialog fd = new FileDialog()
+            FileDialog fd = new FileDialog();
             fn = fd.readFileNames(fn);
             listItems.add(fn);
         }
