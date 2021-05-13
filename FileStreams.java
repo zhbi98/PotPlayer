@@ -12,6 +12,7 @@ import java.io.OutputStreamWriter;
 
 import java.io.LineNumberReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 
 public class FileStreams {
@@ -23,7 +24,7 @@ public class FileStreams {
 
     public FileStreams(String path) {
         /**
-         * C:\example\com\java\video\hello.txt
+         * [C:\example\com\java\video\hello.txt]
          * Specify the file to be read and written
          */
         this.filePath = path;
@@ -106,6 +107,11 @@ public class FileStreams {
     }
 
     public static Boolean checkdir(String dir) {
+        /**
+         * dir type [./example/hello.mp3]
+         * dir type [./example/"]
+         * or type  ["C:\\example\\hello.mp3]
+         */
         File check = new File(dir);
 
         if (check != null) {
@@ -169,6 +175,21 @@ public class FileStreams {
         return false;
     }
 
+    public static void deleteFileContent(String fileName) {
+        File file =new File(fileName);
+        try {
+            if(!file.exists()) {
+                file.createNewFile();
+            }
+            FileWriter fileWriter =new FileWriter(file);
+            fileWriter.write("");
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static int totalNumberOfRows(String fileName) {
         int lines = 0;
 
@@ -194,16 +215,16 @@ public class FileStreams {
 
     public static String readAnyLine(String fileName, int lineNumber) {
         // file begin from 1 line
-        int lines = (0 + 1);
+        int lines = 0;
+        String string;
 
         try {
             File f = new File(fileName);
 
             FileReader read = new FileReader(f);
             LineNumberReader lineReader = new LineNumberReader(read);
-            String string = lineReader.readLine();
 
-            while (string != null) {
+            while (lineReader != null) {
                 string = lineReader.readLine();
                 lines++;
 
@@ -212,6 +233,10 @@ public class FileStreams {
                     read.close();
 
                     return string;
+                }
+                if (string == null) {
+                    // No content, exit the loop
+                    return null;
                 }
             }
 
