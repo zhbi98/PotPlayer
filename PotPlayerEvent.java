@@ -176,6 +176,10 @@ public class PotPlayerEvent implements Initializable {
             buttonStyle.changeButtonImage(play, "./logo/pauseing.jpg", 18, 18);
 
             mediaPlaying(potPlayer);
+
+            // File name displayed in the taskbar
+            playerMain.mainStage.setTitle(playerMain.fileDialog.readFileName());
+            nameLabel.setText("  " + playerMain.fileDialog.readFileName());
         } else {
             potPlayer.pause();
             // the video now playing
@@ -200,6 +204,10 @@ public class PotPlayerEvent implements Initializable {
                 potPlayer.stop();
                 ButtonStyle buttonStyle = new ButtonStyle();
                 buttonStyle.changeButtonImage(play, "./logo/playing.jpg", 18, 18);
+
+                // Software name displayed in the taskbar
+                playerMain.mainStage.setTitle("PotPlayer");
+                nameLabel.setText(null);
             }
         }
     }
@@ -338,18 +346,24 @@ public class PotPlayerEvent implements Initializable {
             String opendFile = playerMain.fileDialog.filePathString();
             PlayerData playerData = new PlayerData();
             String playedPath = "./src/potplayer/data/played.txt";
-            playerData.savePlayedFileName(playedPath, opendFile);
-
 
             int line = playerData.getFileTotalNumOfRow(playedPath);
             System.out.println(DateAndTime.readDateAndTime() + "-played.txt have-" + line);
             String lastTimePlay = FileStreams.readAnyLine(playedPath, (line - 1));
             System.out.println("Last time played:" + lastTimePlay);
+
+            if (line > 20) {
+                FileStreams.deleteFileContent(playedPath);
+            } else {
+                playerData.savePlayedFileName(playedPath, opendFile);
+            }
         }
         if (file != null) {
             noFile = false;
         }
-
+        // File name displayed in the taskbar
+        playerMain.mainStage.setTitle(playerMain.fileDialog.readFileName());
+        nameLabel.setText("  " + playerMain.fileDialog.readFileName());
         newMediaObject(file);
     }
 
@@ -480,12 +494,11 @@ public class PotPlayerEvent implements Initializable {
         Duration   playTime = potPlayer.getPlaytime();
         Double     progress = format.timeProgress(playTime, duration);
 
-        nameLabel.setText("  " + playerMain.fileDialog.readFileName());
         timeLabel.setText("  " + format.formatTime(playTime, duration));
         sliderTime.setValue(progress * 100);
         sliderVolume.setValue((int)Math.round(potPlayer.getVolume() * 100));
 
-        if (progress >= 0.999) {
+        if (progress >= 0.99) {
             potPlayer.setMediaEnd(true);
 
             ButtonStyle buttonStyle = new ButtonStyle();
